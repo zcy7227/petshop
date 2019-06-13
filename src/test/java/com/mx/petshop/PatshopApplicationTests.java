@@ -1,4 +1,4 @@
-package com.mx.patshop;
+package com.mx.petshop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
