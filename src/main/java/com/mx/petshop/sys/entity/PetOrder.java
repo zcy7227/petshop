@@ -27,7 +27,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class PetOrder implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -2266594631398477548L;
 
 
     /**
@@ -37,9 +37,9 @@ public class PetOrder implements Serializable {
     private Integer id;
 
     /**
-     * 商店id
+     * 顾客id
      */
-    private String shopId;
+    private String cusId;
 
     /**
      * 宠物id

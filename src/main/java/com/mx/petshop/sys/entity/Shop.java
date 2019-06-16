@@ -24,7 +24,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Shop implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 7457027946696246980L;
 
     /**
      * id
@@ -45,7 +45,7 @@ public class Shop implements Serializable {
     /**
      * 商店地址
      */
-    private String shopAdd;
+    private String shopAddress;
 
     /**
      * 店主

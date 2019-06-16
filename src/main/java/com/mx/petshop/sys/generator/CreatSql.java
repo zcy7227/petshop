@@ -1,4 +1,4 @@
-package com.mx.petshop;
+package com.mx.petshop.sys.generator;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class CreatSql {
     // 数据库 URL
-    private static final String URL = "jdbc:mysql://localhost:3306/petshop?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3306/petshop?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8";
     // 数据库驱动
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
     // 数据库用户名

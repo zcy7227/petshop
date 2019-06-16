@@ -2,6 +2,7 @@ package com.mx.petshop.sys.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -26,7 +27,7 @@ import lombok.experimental.Accessors;
 
 public class Pet implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -3959246250489510619L;
 
     /**
      * id
@@ -40,9 +41,19 @@ public class Pet implements Serializable {
     private String petId;
 
     /**
-     * 宠物品种
+     * 宠物品种Id
      */
-    private String petVar;
+    private String varietyId;
+
+    /**
+     * 商家id
+     */
+    private String shopId;
+
+    /**
+     * 宠物状态：0 未出售；1 已出售
+     */
+    private Integer petState;
 
     /**
      * 出生日期
@@ -64,5 +75,18 @@ public class Pet implements Serializable {
      */
     private String petInfo;
 
+    /**
+     * 生物属，临时
+     */
+    private transient String varietyGenus;
 
+    /**
+     * 生物亚种，临时
+     */
+    private transient String varietySubspecies;
+
+    /**
+     * 原始价格，临时
+     */
+    private transient BigDecimal originalPrice;
 }

@@ -24,7 +24,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Variety implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 5714937350148980024L;
 
     /**
      * id
@@ -38,14 +38,14 @@ public class Variety implements Serializable {
     private String varietyId;
 
     /**
-     * 宠物种类
+     * 生物属
      */
-    private String petType;
+    private String varietyGenus;
 
     /**
-     * 品种名
+     * 生物亚种
      */
-    private String varietyName;
+    private String varietySubspecies;
 
     /**
      * 原始价格
