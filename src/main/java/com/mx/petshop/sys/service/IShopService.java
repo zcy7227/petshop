@@ -3,6 +3,7 @@ package com.mx.petshop.sys.service;
 import com.mx.petshop.sys.entity.Shop;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -32,6 +33,13 @@ public interface IShopService extends IService<Shop> {
      * @param shop 商家
      */
     void updateShop(Shop shop);
+
+    /**
+     * 修改商家钱包金额
+     * @param shopId 商家Id
+     * @param money 金额
+     */
+    void updateWallet(String shopId, BigDecimal money);
 
     /**
      * 根据商家Id，查询商家

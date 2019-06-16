@@ -3,6 +3,8 @@ package com.mx.petshop.sys.mapper;
 import com.mx.petshop.sys.entity.Pet;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 宠物信息 Mapper 接口
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PetMapper extends BaseMapper<Pet> {
 
+    List<Pet> findPetList(Pet pet);
 }

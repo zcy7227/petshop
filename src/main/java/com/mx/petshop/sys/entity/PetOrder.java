@@ -37,6 +37,11 @@ public class PetOrder implements Serializable {
     private Integer id;
 
     /**
+     * 宠物订单Id
+     */
+    private String petOrderId;
+
+    /**
      * 顾客id
      */
     private String cusId;

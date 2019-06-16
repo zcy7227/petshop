@@ -2,4 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mx.petshop.sys.mapper.PetMapper">
 
+    <select id="findPetList" resultType="com.mx.petshop.sys.entity.Pet">
+        SELECT
+        p.pet_id petId,
+        p.variety_id varietyId,
+        p.shop_id shopId,
+        p.pet_state petState,
+        p.born_date bornDate,
+        p.pet_sex petSex,
+        p.pet_weight petWeight,
+        p.pet_info petInfo,
+        v.variety_genus varietyGenus,
+        v.variety_subspecies varietySubspecies,
+        v.original_price originalPrice,
+        s.shop_name,
+        FROM pet p
+        LEFT JOIN variety v ON(p.variety_id = v.variety_id)
+        LEFT JOIN shop s ON(p.shop_id = s.shop_id)
+        WHERE 1 = 1
+        <if test="pet.petId != null and pet.petId != ''">
+            AND p.pet_id = #{pet.petId}
+        </if>
+        <if test="pet.varietyId != null and pet.varietyId != ''">
+            AND p.variety_id = #{pet.varietyId}
+        </if>
+        <if test="pet.shopId != null and pet.shopId != ''">
+            AND p.shop_id = #{pet.shopId}
+        </if>
+        <if test="pet.petState != null and pet.petState != ''">
+            AND p.pet_state = #{pet.petState}
+        </if>
+        <if test="pet.bornDate != null and pet.bornDate != ''">
+            AND p.born_date = #{pet.bornDate}
+        </if>
+        <if test="pet.petSex != null and pet.petSex != ''">
+            AND p.pet_sex = #{pet.petSex}
+        </if>
+        <if test="pet.petWeight != null and pet.petWeight != ''">
+            AND p.pet_weight = #{pet.petWeight}
+        </if>
+        <if test="pet.varietyGenus != null and pet.varietyGenus != ''">
+            AND v.variety_genus = #{pet.varietyGenus}
+        </if>
+        <if test="pet.varietySubspecies != null and pet.varietySubspecies != ''">
+            AND v.variety_subspecies = #{pet.varietySubspecies}
+        </if>
+        <if test="pet.originalPrice != null and pet.originalPrice != ''">
+            AND v.original_price = #{pet.originalPrice}
+        </if>
+    </select>
 </mapper>

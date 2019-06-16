@@ -53,7 +53,7 @@ public class Shop implements Serializable {
     private String shopKeeper;
 
     /**
-     * 钱包（保密）
+     * 钱包
      */
     private BigDecimal wallet;
 

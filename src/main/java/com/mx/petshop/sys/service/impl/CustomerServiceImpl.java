@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mx.petshop.sys.utils.DateUtil;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -66,6 +67,12 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
     }
 
     @Override
+    public void updateWallet(String customerId, BigDecimal money) {
+        Customer customer = this.findCustomerByCustomerId(customerId);
+        customer.setWallet(customer.getWallet().add(money));
+    }
+
+    @Override
     public Customer findCustomerByCustomerId(String customerId) {
         return this.getOne(new LambdaQueryWrapper<Customer>().eq(Customer::getCusId, customerId));
     }
@@ -76,14 +83,7 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
     }
 
     @Override
-    public List<Customer> findCustomerList(Customer customer) {
-        LambdaQueryWrapper<Customer> queryWrapper = new LambdaQueryWrapper<>();
-        if (StringUtils.isNotBlank(customer.getCusId())) {
-            queryWrapper.eq(Customer::getCusId, customer.getCusId());
-        }
-        if (StringUtils.isNotBlank(customer.getCusEmail())) {
-            queryWrapper.eq(Customer::getCusEmail, customer.getCusEmail());
-        }
-        return this.list(queryWrapper);
+    public List<Customer> findCustomerList() {
+        return this.list();
     }
 }

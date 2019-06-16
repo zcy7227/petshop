@@ -3,6 +3,7 @@ package com.mx.petshop.sys.service;
 import com.mx.petshop.sys.entity.Customer;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -32,11 +33,18 @@ public interface ICustomerService extends IService<Customer> {
     /**
      * 修改用户密码
      * @param cusEmail 用户邮箱
-     * @param oldPw
-     * @param newPw
-     * @return
+     * @param oldPw 旧密码
+     * @param newPw 新密码
+     * @return 修改成功与否
      */
     boolean updatePassword(String cusEmail, String oldPw, String newPw) throws Exception;
+
+    /**
+     * 修改用户钱包金额
+     * @param customerId 用户Id
+     * @param money 金额
+     */
+    void updateWallet(String customerId, BigDecimal money);
 
     /**
      * 根据用户Id，查询用户
@@ -53,9 +61,8 @@ public interface ICustomerService extends IService<Customer> {
     Customer findCustomerByCustomerEmail(String cusEmail);
 
     /**
-     * 根据用户信息，查询用户列表
-     * @param customer 用户信息
+     * 返回用户列表
      * @return 用户列表
      */
-    List<Customer> findCustomerList(Customer customer);
+    List<Customer> findCustomerList();
 }

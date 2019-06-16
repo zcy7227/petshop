@@ -76,6 +76,11 @@ public class Pet implements Serializable {
     private String petInfo;
 
     /**
+     * 商店名，临时
+     */
+    private transient String shopName;
+
+    /**
      * 生物属，临时
      */
     private transient String varietyGenus;

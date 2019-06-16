@@ -3,6 +3,7 @@ package com.mx.petshop.sys.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
@@ -45,6 +46,11 @@ public class Customer implements Serializable {
      * 密码
      */
     private String cusPw;
+
+    /**
+     * 钱包
+     */
+    private BigDecimal wallet;
 
     /**
      * 创建时间
