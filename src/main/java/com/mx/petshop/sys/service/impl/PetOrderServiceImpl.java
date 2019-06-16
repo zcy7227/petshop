@@ -29,10 +29,10 @@ import java.util.List;
 public class PetOrderServiceImpl extends ServiceImpl<PetOrderMapper, PetOrder> implements IPetOrderService {
 
     @Autowired
-    private ICustomerService customerService;
+    private IShopService shopService;
 
     @Autowired
-    private IShopService shopService;
+    private ICustomerService customerService;
 
     @Autowired
     private IPetService petService;
