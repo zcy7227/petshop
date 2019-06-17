@@ -68,6 +68,8 @@ public class PetServiceImpl extends ServiceImpl<PetMapper, Pet> implements IPetS
 
     @Override
     public List<Pet> findPetList(Pet pet) {
-        return this.baseMapper.findPetList(pet);
+        return this.baseMapper.petList(pet);
+//        return this.list(new LambdaQueryWrapper<Pet>().eq(Pet::getPetState, 0));
     }
+
 }

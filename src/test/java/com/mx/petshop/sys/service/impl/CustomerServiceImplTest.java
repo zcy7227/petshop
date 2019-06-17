@@ -1,7 +1,9 @@
 package com.mx.petshop.sys.service.impl;
 
 import com.mx.petshop.sys.entity.Customer;
+import com.mx.petshop.sys.entity.Pet;
 import com.mx.petshop.sys.service.ICustomerService;
+import com.mx.petshop.sys.service.IPetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class CustomerServiceImplTest {
 
     @Autowired
     private ICustomerService customerService;
+
+    @Autowired
+    private IPetService petService;
 
     @Test
     public void register() {
@@ -51,5 +56,10 @@ public class CustomerServiceImplTest {
     public void getOne() {
         Customer customer = customerService.findCustomerByCustomerEmail("test@qq.com");
         System.out.println(customer);
+    }
+
+    @Test
+    public void getPet() {
+        System.out.println(petService.findPetList(new Pet()));
     }
 }

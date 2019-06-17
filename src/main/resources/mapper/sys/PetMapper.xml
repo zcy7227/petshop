@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mx.petshop.sys.mapper.PetMapper">
 
-    <select id="findPetList" resultType="com.mx.petshop.sys.entity.Pet">
+    <select id="petList" resultType="com.mx.petshop.sys.entity.Pet">
         SELECT
         p.pet_id petId,
         p.variety_id varietyId,
@@ -15,7 +15,7 @@
         v.variety_genus varietyGenus,
         v.variety_subspecies varietySubspecies,
         v.original_price originalPrice,
-        s.shop_name,
+        s.shop_name shopName
         FROM pet p
         LEFT JOIN variety v ON(p.variety_id = v.variety_id)
         LEFT JOIN shop s ON(p.shop_id = s.shop_id)

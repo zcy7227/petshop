@@ -3,6 +3,7 @@ package com.mx.petshop.sys.mapper;
 import com.mx.petshop.sys.entity.Pet;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ import java.util.List;
 @Mapper
 public interface PetMapper extends BaseMapper<Pet> {
 
-    List<Pet> findPetList(Pet pet);
+    List<Pet> petList(@Param(value = "pet")Pet pet);
 }

@@ -48,6 +48,11 @@ public class Customer implements Serializable {
     private String cusPw;
 
     /**
+     * 用户类型：0 普通用户；1 管理员
+     */
+    private Integer type;
+
+    /**
      * 钱包
      */
     private BigDecimal wallet;
